@@ -1,0 +1,62 @@
+# Entornos virtuales
+.venv/
+venv/
+ENV/
+env/
+
+# Variables de entorno (secretos: DATABASE_URL, JWT_SECRET_KEY, STATIC_TOKEN)
+.env
+.env.*
+!.env.example
+
+# Bytecode y caché de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Empaquetado / instalación local
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Pruebas y cobertura
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# Herramientas de análisis
+.mypy_cache/
+.ruff_cache/
+
+# Bases de datos locales de desarrollo
+*.db
+*.sqlite3
+
+# Elastic Beanstalk (estado local; mantener en repo los *.cfg.yml si aplica)
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+
+# IDE y SO
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
