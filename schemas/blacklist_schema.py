@@ -8,6 +8,7 @@ class BlacklistEntrySchema(ma.SQLAlchemyAutoSchema):
     class Meta:
         model = BlacklistEntry
         load_instance = True
+        exclude = ("id", "created_at", "request_ip")
 
     email = fields.Email(required=True)
     app_uuid = fields.String(required=True)
