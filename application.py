@@ -18,8 +18,15 @@ def create_app():
     api.add_resource(BlacklistResource, "/blacklists")
     api.add_resource(BlacklistQueryResource, "/blacklists/<string:email>")
 
+    @app.route("/health")
+    def health():
+        return {"status": "ok"}, 200
+
     with app.app_context():
-        db.create_all()
+        try:
+            db.create_all()
+        except Exception as e:
+            app.logger.warning(f"db.create_all() failed: {e}")
 
     return app
 
