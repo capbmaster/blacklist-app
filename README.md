@@ -2,6 +2,11 @@
 
 API REST en Flask que gestiona una lista negra global de correos. En local usa PostgreSQL vía **Docker Compose**; el despliegue previsto es **AWS Elastic Beanstalk**.
 
+## Documentación del API
+
+- **Postman Documenter:** [https://documenter.getpostman.com/view/22595946/2sBXitBSSc](https://documenter.getpostman.com/view/22595946/2sBXitBSSc)
+- **Colección Postman (repo):** [Blacklist_API.postman_collection.json](Blacklist_API.postman_collection.json) — importar en Postman para ejecutar todos los escenarios de prueba.
+
 ## Requisitos
 
 - [Docker](https://docs.docker.com/get-docker/) y Docker Compose v2
