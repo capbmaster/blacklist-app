@@ -22,6 +22,10 @@
         {
           "name": "NEW_RELIC_APP_NAME",
           "value": "blacklist-app"
+        },
+        {
+          "name": "STATIC_TOKEN",
+          "value": "super-secret-static-key"
         }
       ],
       "secrets": [
@@ -29,7 +33,15 @@
           "name": "NEW_RELIC_LICENSE_KEY",
           "valueFrom": "arn:aws:secretsmanager:us-east-1:259151462184:secret:blacklist-app:new-relic-license-key::"
         }
-      ]
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/blacklist-app",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
     }
   ],
   "requiresCompatibilities": [

@@ -13,6 +13,10 @@ WORKDIR /app
 COPY --from=builder /install /usr/local
 COPY . .
 
+ENV NEW_RELIC_LOG=stdout
+ENV NEW_RELIC_DISTRIBUTED_TRACING_ENABLED=true
+
+
 EXPOSE 5000
 
-CMD ["newrelic-admin", "run-program", "gunicorn", "--bind", "0.0.0.0:5000", "--workers", "1", "--timeout", "120", "application:application"]
+CMD ["newrelic-admin", "run-program", "gunicorn", "--bind", "0.0.0.0:5000", "--workers", "1", "--timeout", "120", "--access-logfile", "-", "application:application"]
