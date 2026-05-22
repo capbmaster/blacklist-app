@@ -1,8 +1,14 @@
 version: 0.2
 
 phases:
+  install:
+    runtime-versions:
+      python: 3.11
+    commands:
+      - echo Installing Python......
   pre_build:
     commands:
+      - echo Python installed succesfully
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 259151462184.dkr.ecr.us-east-1.amazonaws.com
       - echo Installing dependencies for tests...
